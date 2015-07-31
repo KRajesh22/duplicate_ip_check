@@ -15,9 +15,9 @@ DUPIP=`awk '$3 == "1" { print $0 }' $OUTPUT`
 
 if [ -z "$DUPIP" ]
 then
-        echo OK
+        echo OK: No duplicate IP found
         exit 0
 else
-        echo Duplicate IP found: $DUPIP
+        echo CRITICAL: Duplicate IP found: $DUPIP
         exit 2
 fi
